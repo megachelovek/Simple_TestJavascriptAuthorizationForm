@@ -1,0 +1,78 @@
+.body{
+
+}
+.main-login-block{
+    @import url('https://fonts.googleapis.com/css?family=Lato');
+    font-family: 'Lato', sans-serif;
+    display: block;
+    background: linear-gradient(to top left, #e33c6b, #bf3397);
+    min-height: 450px;
+    max-width: 280px ;
+}
+#login-form{
+    display: block;
+    margin: 0px 24px 0px 24px;
+    background-color: white;
+    border-radius: 5px;
+    min-height: 245px;
+}
+#login-form h1{
+    padding: 17px 0 17px;
+    margin: 0 auto;
+    width: fit-content;
+}
+.logo{
+    width: fit-content;
+    display: block;
+    padding: 35px 0;
+    margin: 0 auto;
+}
+input{
+    font-family: 'Lato', sans-serif;
+    border: none;
+    padding: 10px;
+    width: -webkit-fill-available;
+    margin: 10px 24px;
+    display: block;
+    background-color: #f1f1f1;
+}
+#login-form input[type=submit]{
+    font-family: 'Lato', sans-serif;
+    border-radius: 22px;
+    display: block;
+    width: 100px;
+    margin: 20px auto;
+    background-color: #e7435c;
+    color: white;
+    padding: 15px;
+}
+#login-form input[type=submit]:hover{
+    font-family: 'Lato', sans-serif;
+    border-radius: 22px;
+    display: block;
+    width: 100px;
+    margin: 20px auto;
+    background-color: #e7381c;
+    color: white;
+    padding: 15px;
+}
+.usertext{
+    display: block;
+    font-family: 'Lato', sans-serif;
+    text-align: center;
+    width: 90%;
+    margin: 0 auto;
+}
+.error{
+    display: block;
+    font-family: 'Lato', sans-serif;
+    padding: 20px;
+    width: fit-content;
+    margin: auto;
+}
+.userphoto{
+    display: block;
+    padding: 20px;
+    width: fit-content;
+    margin: 0 auto;
+}

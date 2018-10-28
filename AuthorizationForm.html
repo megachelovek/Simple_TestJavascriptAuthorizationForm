@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Форма авторизации</title>
+    <link href="css/AuthorizationFormStyle.css" rel="stylesheet" type="text/css" />
+    <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
+</head>
+<body>
+<div class="main-login-block">
+    <div class="logo"><img src="mercdev-logo2.png"></div>
+<div id="login-form">
+    <h1>Login</h1>
+    <form action="Authorization()">
+        <input type="text" id="email" name="email" placeholder="E-mail">
+        <input type="password" id="password" name="password" placeholder="Password">
+        <span>
+ </span>
+        <input type="submit" value="Login" onclick="Authorization()">
+    </form>
+
+</div>
+</div>
+</body>
+<script>
+    function Authorization() {
+        var email = document.getElementById('email').value;
+        var pass = document.getElementById('password').value;
+        var xhr = new XMLHttpRequest();
+        var url = "https://us-central1-mercdev-academy.cloudfunctions.net/login";
+        xhr.open("POST", url, true);
+        xhr.setRequestHeader("Content-Type", "application/json");
+        xhr.onreadystatechange = function () {
+            if (xhr.readyState === 4 && xhr.status === 200) {
+                var json = JSON.parse(xhr.responseText);
+                console.log(json.email + ", " + json.password);
+            }
+        };
+        var data = JSON.stringify({"email": email, "password": pass});
+        xhr.send(data);
+        xhr = new XMLHttpRequest();
+        xhr.open('GET', url, false);
+        xhr.send();
+        if (xhr.status != 200) {
+            document.getElementById('login-form').innerHTML = '<div class="error">Ошибка авторизации!</div>';
+        } else {
+            document.getElementById('login-form').innerHTML = '<div class="success"> ' +
+                '<div class="userphoto"><img src="icon.png"></div>' +
+                '<div class="usertext"> Добро пожаловать, <br />' + email + '</div>' +
+                '</div>';
+        }
+    }
+</script>
+</html>
